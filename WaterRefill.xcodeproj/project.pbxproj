@@ -8,22 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		5DFAA3AA23D5DF25003E5C7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFAA3A923D5DF25003E5C7D /* AppDelegate.swift */; };
-		5DFAA3AC23D5DF25003E5C7D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFAA3AB23D5DF25003E5C7D /* SceneDelegate.swift */; };
 		5DFAA3AE23D5DF25003E5C7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFAA3AD23D5DF25003E5C7D /* ViewController.swift */; };
 		5DFAA3B123D5DF25003E5C7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DFAA3AF23D5DF25003E5C7D /* Main.storyboard */; };
 		5DFAA3B323D5DF27003E5C7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DFAA3B223D5DF27003E5C7D /* Assets.xcassets */; };
 		5DFAA3B623D5DF27003E5C7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DFAA3B423D5DF27003E5C7D /* LaunchScreen.storyboard */; };
+		5DFAA3C223D5E2C8003E5C7D /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFAA3C123D5E2C8003E5C7D /* NetworkRequest.swift */; };
+		5DFAA3C423D62E48003E5C7D /* GetRefillPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFAA3C323D62E48003E5C7D /* GetRefillPoints.swift */; };
+		5DFAA3C623D62E5D003E5C7D /* RefillPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFAA3C523D62E5D003E5C7D /* RefillPoint.swift */; };
+		5DFAA3C823D62E74003E5C7D /* RefillPointsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFAA3C723D62E74003E5C7D /* RefillPointsParser.swift */; };
+		8118DD2DB0AB3D6507A8F7E4 /* Pods_WaterRefill.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D05EFE5F7E25CA281383D0C /* Pods_WaterRefill.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0708D1937978B8589A1E9256 /* Pods-WaterRefill.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaterRefill.release.xcconfig"; path = "Target Support Files/Pods-WaterRefill/Pods-WaterRefill.release.xcconfig"; sourceTree = "<group>"; };
 		5DFAA3A623D5DF25003E5C7D /* WaterRefill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterRefill.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DFAA3A923D5DF25003E5C7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5DFAA3AB23D5DF25003E5C7D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5DFAA3AD23D5DF25003E5C7D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5DFAA3B023D5DF25003E5C7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5DFAA3B223D5DF27003E5C7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5DFAA3B523D5DF27003E5C7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5DFAA3B723D5DF27003E5C7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5DFAA3C123D5E2C8003E5C7D /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		5DFAA3C323D62E48003E5C7D /* GetRefillPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRefillPoints.swift; sourceTree = "<group>"; };
+		5DFAA3C523D62E5D003E5C7D /* RefillPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefillPoint.swift; sourceTree = "<group>"; };
+		5DFAA3C723D62E74003E5C7D /* RefillPointsParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefillPointsParser.swift; sourceTree = "<group>"; };
+		8D05EFE5F7E25CA281383D0C /* Pods_WaterRefill.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WaterRefill.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2935B5C2E8CB9A6E3D77B50 /* Pods-WaterRefill.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaterRefill.debug.xcconfig"; path = "Target Support Files/Pods-WaterRefill/Pods-WaterRefill.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8118DD2DB0AB3D6507A8F7E4 /* Pods_WaterRefill.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +53,8 @@
 			children = (
 				5DFAA3A823D5DF25003E5C7D /* WaterRefill */,
 				5DFAA3A723D5DF25003E5C7D /* Products */,
+				AEB7B81D8F94D8260E655338 /* Pods */,
+				8A54027FBC5B14DDE1A1AF2F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,8 +69,8 @@
 		5DFAA3A823D5DF25003E5C7D /* WaterRefill */ = {
 			isa = PBXGroup;
 			children = (
+				5DFAA3BD23D5DF76003E5C7D /* network */,
 				5DFAA3A923D5DF25003E5C7D /* AppDelegate.swift */,
-				5DFAA3AB23D5DF25003E5C7D /* SceneDelegate.swift */,
 				5DFAA3AD23D5DF25003E5C7D /* ViewController.swift */,
 				5DFAA3AF23D5DF25003E5C7D /* Main.storyboard */,
 				5DFAA3B223D5DF27003E5C7D /* Assets.xcassets */,
@@ -67,6 +80,58 @@
 			path = WaterRefill;
 			sourceTree = "<group>";
 		};
+		5DFAA3BD23D5DF76003E5C7D /* network */ = {
+			isa = PBXGroup;
+			children = (
+				5DFAA3C023D5E1EC003E5C7D /* models */,
+				5DFAA3BF23D5E1E4003E5C7D /* parser */,
+				5DFAA3BE23D5E1DF003E5C7D /* request */,
+			);
+			path = network;
+			sourceTree = "<group>";
+		};
+		5DFAA3BE23D5E1DF003E5C7D /* request */ = {
+			isa = PBXGroup;
+			children = (
+				5DFAA3C123D5E2C8003E5C7D /* NetworkRequest.swift */,
+				5DFAA3C323D62E48003E5C7D /* GetRefillPoints.swift */,
+			);
+			path = request;
+			sourceTree = "<group>";
+		};
+		5DFAA3BF23D5E1E4003E5C7D /* parser */ = {
+			isa = PBXGroup;
+			children = (
+				5DFAA3C723D62E74003E5C7D /* RefillPointsParser.swift */,
+			);
+			path = parser;
+			sourceTree = "<group>";
+		};
+		5DFAA3C023D5E1EC003E5C7D /* models */ = {
+			isa = PBXGroup;
+			children = (
+				5DFAA3C523D62E5D003E5C7D /* RefillPoint.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		8A54027FBC5B14DDE1A1AF2F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8D05EFE5F7E25CA281383D0C /* Pods_WaterRefill.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AEB7B81D8F94D8260E655338 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B2935B5C2E8CB9A6E3D77B50 /* Pods-WaterRefill.debug.xcconfig */,
+				0708D1937978B8589A1E9256 /* Pods-WaterRefill.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +139,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5DFAA3BA23D5DF27003E5C7D /* Build configuration list for PBXNativeTarget "WaterRefill" */;
 			buildPhases = (
+				39DF2CD49D61136EF1A14B54 /* [CP] Check Pods Manifest.lock */,
 				5DFAA3A223D5DF25003E5C7D /* Sources */,
 				5DFAA3A323D5DF25003E5C7D /* Frameworks */,
 				5DFAA3A423D5DF25003E5C7D /* Resources */,
+				3AB3F7DC4942A777E0FF6CDA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,14 +200,68 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		39DF2CD49D61136EF1A14B54 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WaterRefill-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3AB3F7DC4942A777E0FF6CDA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WaterRefill/Pods-WaterRefill-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WaterRefill/Pods-WaterRefill-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5DFAA3A223D5DF25003E5C7D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				5DFAA3AE23D5DF25003E5C7D /* ViewController.swift in Sources */,
+				5DFAA3C823D62E74003E5C7D /* RefillPointsParser.swift in Sources */,
+				5DFAA3C223D5E2C8003E5C7D /* NetworkRequest.swift in Sources */,
+				5DFAA3C623D62E5D003E5C7D /* RefillPoint.swift in Sources */,
 				5DFAA3AA23D5DF25003E5C7D /* AppDelegate.swift in Sources */,
-				5DFAA3AC23D5DF25003E5C7D /* SceneDelegate.swift in Sources */,
+				5DFAA3C423D62E48003E5C7D /* GetRefillPoints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +337,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +391,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -282,6 +403,7 @@
 		};
 		5DFAA3BB23D5DF27003E5C7D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2935B5C2E8CB9A6E3D77B50 /* Pods-WaterRefill.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +422,7 @@
 		};
 		5DFAA3BC23D5DF27003E5C7D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0708D1937978B8589A1E9256 /* Pods-WaterRefill.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
