@@ -34,6 +34,5 @@ class RefillPoint: NSObject {
    var refill_type:Int = 0
    var refillOrSeller:Int = 0
    var isApproved:Bool = false
-   var rating:Double = 0.0
-    
+   var rating:String = ""
 }

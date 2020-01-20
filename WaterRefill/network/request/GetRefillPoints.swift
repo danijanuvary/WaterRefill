@@ -26,11 +26,7 @@ class GetRefillPoints: NetworkRequest<RefillPoint> {
        }
        
        override func parseForArray(_ data: Data) -> [RefillPoint] {
-        
-        let test = Data(getTestData().utf8)
-        let json = JSON(test)
-        return RefillPointsParser.parse(test)
-        
+        return RefillPointsParser.parse(data)
        }
     
        func setURL(){

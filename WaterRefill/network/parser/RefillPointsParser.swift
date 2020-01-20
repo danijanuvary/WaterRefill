@@ -15,18 +15,24 @@ class RefillPointsParser: NSObject {
         
         var refillPoints:[RefillPoint] = [];
         let json = JSON(data)
-        let status = json["status"].stringValue
-        let code = json["code"].stringValue
-        let data = json["data"].arrayValue
-        for point in data {
-            let refillPoint = parseRefillPoint(dict: point)
-            refillPoints.append(refillPoint)
-            
+        let status = json["status"].boolValue
+        let code = json["code"].intValue
+        if(status && code == 200){
+            let dataArray = json["data"].array
+            guard let data = dataArray else {
+                return refillPoints
+            }
+            for point in data {
+                let refillPoint = parseRefillPoint(dict: point)
+                refillPoints.append(refillPoint)
+            }
         }
+    
         return refillPoints
     }
     
     static func parseRefillPoint(dict:JSON) -> RefillPoint{
+        
         let point = RefillPoint()
         point.refill_id = dict["refill_id"].intValue
         point.user_id = dict["user_id"].intValue
@@ -52,7 +58,7 @@ class RefillPointsParser: NSObject {
         point.refill_type = dict["refill_type"].intValue
         point.refillOrSeller = dict["refillOrSeller"].intValue
         point.isApproved = dict["isApproved"].boolValue
-        point.rating = dict["rating"].doubleValue
+        point.rating = dict["rating"].stringValue
         
         return point
     }
