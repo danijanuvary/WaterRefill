@@ -1,0 +1,21 @@
+//
+//  Constants.swift
+//  WaterRefill
+//
+//  Created by Jithin on 22/01/20.
+//  Copyright © 2020 FabCoders. All rights reserved.
+//
+
+import UIKit
+
+class Constants: NSObject {
+   
+   static let FABCODERS_API_KEY = "FABFabCodersENCRY"
+   static let KEY_API = "X_API_KEY"
+   static let KEY_RANGE = "range"
+   static let KEY_LIMIT = "limit"
+   static let KEY_OFFSET = "offset"
+   static let KEY_LATITUDE = "currentlatitude"
+   static let KEY_LONGITUDE = "currentlongitude"
+   static let KEY_ORDER_BY = "order_by"
+}

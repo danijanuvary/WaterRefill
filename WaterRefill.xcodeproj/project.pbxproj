@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D58D91823D736AA005EE578 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D58D91723D736AA005EE578 /* splash.png */; };
+		5D58D91E23D73716005EE578 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D58D91D23D73716005EE578 /* SplashViewController.swift */; };
+		5D58D92023D73964005EE578 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D58D91F23D73964005EE578 /* InitialViewController.swift */; };
+		5D58D92223D73FB9005EE578 /* logotext.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D58D92123D73FB9005EE578 /* logotext.png */; };
+		5D58D92723D794FC005EE578 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D58D92623D794FC005EE578 /* Constants.swift */; };
 		5DFAA3AA23D5DF25003E5C7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFAA3A923D5DF25003E5C7D /* AppDelegate.swift */; };
 		5DFAA3AE23D5DF25003E5C7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFAA3AD23D5DF25003E5C7D /* ViewController.swift */; };
 		5DFAA3B123D5DF25003E5C7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DFAA3AF23D5DF25003E5C7D /* Main.storyboard */; };
@@ -21,6 +26,11 @@
 
 /* Begin PBXFileReference section */
 		0708D1937978B8589A1E9256 /* Pods-WaterRefill.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaterRefill.release.xcconfig"; path = "Target Support Files/Pods-WaterRefill/Pods-WaterRefill.release.xcconfig"; sourceTree = "<group>"; };
+		5D58D91723D736AA005EE578 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
+		5D58D91D23D73716005EE578 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		5D58D91F23D73964005EE578 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		5D58D92123D73FB9005EE578 /* logotext.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logotext.png; sourceTree = "<group>"; };
+		5D58D92623D794FC005EE578 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5DFAA3A623D5DF25003E5C7D /* WaterRefill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterRefill.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DFAA3A923D5DF25003E5C7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DFAA3AD23D5DF25003E5C7D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -48,6 +58,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D58D91423D72B8B005EE578 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5D58D91D23D73716005EE578 /* SplashViewController.swift */,
+				5D58D91F23D73964005EE578 /* InitialViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5D58D91523D73679005EE578 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5D58D91623D7369C005EE578 /* Images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5D58D91623D7369C005EE578 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				5D58D91723D736AA005EE578 /* splash.png */,
+				5D58D92123D73FB9005EE578 /* logotext.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		5D58D92523D794CE005EE578 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				5D58D92623D794FC005EE578 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		5DFAA39D23D5DF25003E5C7D = {
 			isa = PBXGroup;
 			children = (
@@ -69,7 +113,10 @@
 		5DFAA3A823D5DF25003E5C7D /* WaterRefill */ = {
 			isa = PBXGroup;
 			children = (
-				5DFAA3BD23D5DF76003E5C7D /* network */,
+				5D58D92523D794CE005EE578 /* Constants */,
+				5D58D91423D72B8B005EE578 /* Controllers */,
+				5DFAA3BD23D5DF76003E5C7D /* Network */,
+				5D58D91523D73679005EE578 /* Resources */,
 				5DFAA3A923D5DF25003E5C7D /* AppDelegate.swift */,
 				5DFAA3AD23D5DF25003E5C7D /* ViewController.swift */,
 				5DFAA3AF23D5DF25003E5C7D /* Main.storyboard */,
@@ -80,14 +127,14 @@
 			path = WaterRefill;
 			sourceTree = "<group>";
 		};
-		5DFAA3BD23D5DF76003E5C7D /* network */ = {
+		5DFAA3BD23D5DF76003E5C7D /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				5DFAA3C023D5E1EC003E5C7D /* models */,
 				5DFAA3BF23D5E1E4003E5C7D /* parser */,
 				5DFAA3BE23D5E1DF003E5C7D /* request */,
 			);
-			path = network;
+			path = Network;
 			sourceTree = "<group>";
 		};
 		5DFAA3BE23D5E1DF003E5C7D /* request */ = {
@@ -144,6 +191,7 @@
 				5DFAA3A323D5DF25003E5C7D /* Frameworks */,
 				5DFAA3A423D5DF25003E5C7D /* Resources */,
 				3AB3F7DC4942A777E0FF6CDA /* [CP] Embed Pods Frameworks */,
+				F62FC2EE51F23CDA32230EBD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -192,8 +240,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D58D91823D736AA005EE578 /* splash.png in Resources */,
 				5DFAA3B623D5DF27003E5C7D /* LaunchScreen.storyboard in Resources */,
 				5DFAA3B323D5DF27003E5C7D /* Assets.xcassets in Resources */,
+				5D58D92223D73FB9005EE578 /* logotext.png in Resources */,
 				5DFAA3B123D5DF25003E5C7D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -235,6 +285,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/iOSDropDown/iOSDropDown.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -243,10 +294,33 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iOSDropDown.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WaterRefill/Pods-WaterRefill-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F62FC2EE51F23CDA32230EBD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WaterRefill/Pods-WaterRefill-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WaterRefill/Pods-WaterRefill-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -258,10 +332,13 @@
 			files = (
 				5DFAA3AE23D5DF25003E5C7D /* ViewController.swift in Sources */,
 				5DFAA3C823D62E74003E5C7D /* RefillPointsParser.swift in Sources */,
+				5D58D91E23D73716005EE578 /* SplashViewController.swift in Sources */,
 				5DFAA3C223D5E2C8003E5C7D /* NetworkRequest.swift in Sources */,
 				5DFAA3C623D62E5D003E5C7D /* RefillPoint.swift in Sources */,
 				5DFAA3AA23D5DF25003E5C7D /* AppDelegate.swift in Sources */,
 				5DFAA3C423D62E48003E5C7D /* GetRefillPoints.swift in Sources */,
+				5D58D92023D73964005EE578 /* InitialViewController.swift in Sources */,
+				5D58D92723D794FC005EE578 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
