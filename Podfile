@@ -11,6 +11,7 @@ target 'WaterRefill' do
   pod 'SwiftyJSON', '~> 4.0'
   pod 'SDWebImage', '~> 5.0'
   pod 'GoogleMaps'
-  pod 'iOSDropDown'
+  #pod 'iOSDropDown'
+  pod 'DropDown'
   
 end
