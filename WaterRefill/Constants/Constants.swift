@@ -9,6 +9,9 @@
 import UIKit
 
 class Constants: NSObject {
+    
+   static let ROOT_URL = "http://fabcoders.com/waterrefillpoints"
+   static let SUB_PATH = "/index.php/API/ApiCaller/"
    
    static let FABCODERS_API_KEY = "FABFabCodersENCRY"
    static let KEY_API = "X_API_KEY"

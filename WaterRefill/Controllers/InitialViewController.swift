@@ -12,10 +12,14 @@ import DropDown
 
 class InitialViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDelegate{
 
+    let REFILL_POINT_CELL_NIB = "RefillPointCell"
+    let identifier  = "RefillPointCell"
+    
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var noRefillPointsView: UIView!
     @IBOutlet weak var showRefillPointsView: UIView!
+    @IBOutlet weak var rootStackView: UIStackView!
     
     @IBOutlet weak var selectRangeOption: UIButton!
     
@@ -28,6 +32,7 @@ class InitialViewController: UIViewController,GMSMapViewDelegate,CLLocationManag
     let defaultRange = 10
     var refillPoints:[RefillPoint]?
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationLogo()
@@ -36,7 +41,7 @@ class InitialViewController: UIViewController,GMSMapViewDelegate,CLLocationManag
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.showRefillPoints(_:)))
         showRefillPointsView.addGestureRecognizer(tap)
-        
+        tableView.register(UINib.init(nibName: REFILL_POINT_CELL_NIB, bundle: nil), forCellReuseIdentifier: identifier)
         initialLoad = true
     }
     
@@ -100,6 +105,7 @@ class InitialViewController: UIViewController,GMSMapViewDelegate,CLLocationManag
         params[Constants.KEY_OFFSET] = "0"
         GetRefillPoints(params).loadRefillPoints { (points) in
             self.refillPoints = points
+            self.tableView.reloadData()
             self.updateUI()
         }
     }
@@ -117,8 +123,15 @@ class InitialViewController: UIViewController,GMSMapViewDelegate,CLLocationManag
     }
     
     @objc func showRefillPoints(_ sender: UITapGestureRecognizer? = nil) {
-        mapView.isHidden = !mapView.isHidden
-        tableView.isHidden = !tableView.isHidden
+
+        if mapView.isHidden{
+            mapView.isHidden = false
+            tableView.isHidden = true
+        }
+        else{
+            mapView.isHidden = true
+            tableView.isHidden = false
+        }
     }
     
     
@@ -134,7 +147,10 @@ extension InitialViewController:UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let refillPoint = refillPoints![indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! RefillPointCell
+        cell.setData(refillPoint: refillPoint)
+        return cell
     }
     
 }

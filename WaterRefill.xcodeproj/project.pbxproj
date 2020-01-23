@@ -12,6 +12,9 @@
 		5D58D92023D73964005EE578 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D58D91F23D73964005EE578 /* InitialViewController.swift */; };
 		5D58D92223D73FB9005EE578 /* logotext.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D58D92123D73FB9005EE578 /* logotext.png */; };
 		5D58D92723D794FC005EE578 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D58D92623D794FC005EE578 /* Constants.swift */; };
+		5D58D95323D9DC41005EE578 /* RefillPointCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D58D95123D9DC41005EE578 /* RefillPointCell.swift */; };
+		5D58D95423D9DC41005EE578 /* RefillPointCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D58D95223D9DC41005EE578 /* RefillPointCell.xib */; };
+		5D58D95623D9E700005EE578 /* drop.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D58D95523D9E700005EE578 /* drop.png */; };
 		5DFAA3AA23D5DF25003E5C7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFAA3A923D5DF25003E5C7D /* AppDelegate.swift */; };
 		5DFAA3AE23D5DF25003E5C7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFAA3AD23D5DF25003E5C7D /* ViewController.swift */; };
 		5DFAA3B123D5DF25003E5C7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DFAA3AF23D5DF25003E5C7D /* Main.storyboard */; };
@@ -31,6 +34,9 @@
 		5D58D91F23D73964005EE578 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		5D58D92123D73FB9005EE578 /* logotext.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logotext.png; sourceTree = "<group>"; };
 		5D58D92623D794FC005EE578 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5D58D95123D9DC41005EE578 /* RefillPointCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefillPointCell.swift; sourceTree = "<group>"; };
+		5D58D95223D9DC41005EE578 /* RefillPointCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RefillPointCell.xib; sourceTree = "<group>"; };
+		5D58D95523D9E700005EE578 /* drop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drop.png; sourceTree = "<group>"; };
 		5DFAA3A623D5DF25003E5C7D /* WaterRefill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterRefill.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DFAA3A923D5DF25003E5C7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DFAA3AD23D5DF25003E5C7D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +86,7 @@
 			children = (
 				5D58D91723D736AA005EE578 /* splash.png */,
 				5D58D92123D73FB9005EE578 /* logotext.png */,
+				5D58D95523D9E700005EE578 /* drop.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -90,6 +97,15 @@
 				5D58D92623D794FC005EE578 /* Constants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		5D58D94823D8D97D005EE578 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5D58D95123D9DC41005EE578 /* RefillPointCell.swift */,
+				5D58D95223D9DC41005EE578 /* RefillPointCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		5DFAA39D23D5DF25003E5C7D = {
@@ -113,6 +129,7 @@
 		5DFAA3A823D5DF25003E5C7D /* WaterRefill */ = {
 			isa = PBXGroup;
 			children = (
+				5D58D94823D8D97D005EE578 /* Views */,
 				5D58D92523D794CE005EE578 /* Constants */,
 				5D58D91423D72B8B005EE578 /* Controllers */,
 				5DFAA3BD23D5DF76003E5C7D /* Network */,
@@ -242,6 +259,8 @@
 			files = (
 				5D58D91823D736AA005EE578 /* splash.png in Resources */,
 				5DFAA3B623D5DF27003E5C7D /* LaunchScreen.storyboard in Resources */,
+				5D58D95423D9DC41005EE578 /* RefillPointCell.xib in Resources */,
+				5D58D95623D9E700005EE578 /* drop.png in Resources */,
 				5DFAA3B323D5DF27003E5C7D /* Assets.xcassets in Resources */,
 				5D58D92223D73FB9005EE578 /* logotext.png in Resources */,
 				5DFAA3B123D5DF25003E5C7D /* Main.storyboard in Resources */,
@@ -332,6 +351,7 @@
 			files = (
 				5DFAA3AE23D5DF25003E5C7D /* ViewController.swift in Sources */,
 				5DFAA3C823D62E74003E5C7D /* RefillPointsParser.swift in Sources */,
+				5D58D95323D9DC41005EE578 /* RefillPointCell.swift in Sources */,
 				5D58D91E23D73716005EE578 /* SplashViewController.swift in Sources */,
 				5DFAA3C223D5E2C8003E5C7D /* NetworkRequest.swift in Sources */,
 				5DFAA3C623D62E5D003E5C7D /* RefillPoint.swift in Sources */,

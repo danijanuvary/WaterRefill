@@ -168,6 +168,7 @@
                     <connections>
                         <outlet property="mapView" destination="vfD-XF-iVc" id="tKc-pW-Iyn"/>
                         <outlet property="noRefillPointsView" destination="pr9-Un-bSH" id="dfd-lQ-hhE"/>
+                        <outlet property="rootStackView" destination="3WN-EH-sKm" id="2g0-Wk-HEt"/>
                         <outlet property="selectRangeOption" destination="EVi-xj-KMg" id="vPm-82-VEY"/>
                         <outlet property="showRefillPointsView" destination="xVE-ec-lHA" id="DAU-gF-MBx"/>
                         <outlet property="tableView" destination="iEP-ff-wJm" id="Jhd-dk-peg"/>
