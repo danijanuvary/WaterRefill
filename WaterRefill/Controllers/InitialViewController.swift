@@ -122,16 +122,42 @@ class InitialViewController: UIViewController,GMSMapViewDelegate,CLLocationManag
         }
     }
     
+//    @objc func showRefillPoints(_ sender: UITapGestureRecognizer? = nil) {
+//
+//        if mapView.isHidden{
+//            mapView.isHidden = false
+//            tableView.isHidden = true
+//        }
+//        else{
+//            mapView.isHidden = true
+//            tableView.isHidden = false
+//        }
+//    }
+    
     @objc func showRefillPoints(_ sender: UITapGestureRecognizer? = nil) {
-
+    
         if mapView.isHidden{
-            mapView.isHidden = false
-            tableView.isHidden = true
+            let oldPoint = tableView.frame.origin
+            UIView.animate(withDuration: 0.6, animations: {
+                self.mapView.isHidden = false
+                self.tableView.frame.origin.y = oldPoint.y + self.tableView.frame.size.height
+            }) { (completion) in
+              self.tableView.frame.origin = oldPoint
+              self.tableView.isHidden = true
+            }
         }
+        
         else{
-            mapView.isHidden = true
-            tableView.isHidden = false
+            let oldPoint = tableView.frame.origin
+            tableView.frame.origin.y = tableView.frame.origin.y + tableView.frame.size.height
+            UIView.animate(withDuration: 0.6, animations: {
+                self.tableView.frame.origin = oldPoint
+                self.tableView.isHidden = false
+            }) { (completion) in
+                self.mapView.isHidden = true
+            }
         }
+        
     }
     
     
