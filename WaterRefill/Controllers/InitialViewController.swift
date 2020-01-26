@@ -94,6 +94,7 @@ class InitialViewController: UIViewController,GMSMapViewDelegate,CLLocationManag
         if let location = locations.last{
             let camera = GMSCameraPosition.camera(withLatitude: (location.coordinate.latitude), longitude:(location.coordinate.longitude), zoom:15)
             mapView.animate(to: camera)
+            myLocation = location
             locationManager.stopUpdatingLocation()
             getAllRefillPoints(range: defaultRange)
         }
@@ -121,16 +122,19 @@ class InitialViewController: UIViewController,GMSMapViewDelegate,CLLocationManag
     
     func updateUI(){
         if refillPoints.count == 0{
+            tableView.isHidden = true
+            mapView.isHidden = false
             noRefillPointsView.isHidden = false
             showRefillPointsView.isHidden = true
         }
         else{
            noRefillPointsView.isHidden = true
-            showRefillPointsView.isHidden = false
+           showRefillPointsView.isHidden = false
         }
     }
         
     @objc func showRefillPoints(_ sender: UITapGestureRecognizer? = nil) {
+        
         if mapView.isHidden{
             let oldPoint = tableView.frame.origin
             UIView.animate(withDuration: 0.6, animations: {
@@ -170,6 +174,12 @@ class InitialViewController: UIViewController,GMSMapViewDelegate,CLLocationManag
                 markers.append(marker)
             }
             mapView.animate(with: GMSCameraUpdate.fit(bounds, with: UIEdgeInsets(top: 50.0 , left: 50.0 ,bottom: 50.0 ,right: 50.0)))
+        }
+        else{
+            
+            guard let myLocation = mapView.myLocation else{return}
+            let camera = GMSCameraPosition.camera(withLatitude: myLocation.coordinate.latitude, longitude:myLocation.coordinate.longitude, zoom:15)
+            mapView.animate(to: camera)
         }
     }
     
