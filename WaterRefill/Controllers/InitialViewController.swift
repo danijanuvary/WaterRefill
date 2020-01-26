@@ -30,7 +30,8 @@ class InitialViewController: UIViewController,GMSMapViewDelegate,CLLocationManag
     let ranges = [1,5,10,20,50,100,40000]
     let rangeDescription = ["1 km","5 km","10 km","20 km","50 km","100 km","100+ km"]
     let defaultRange = 10
-    var refillPoints:[RefillPoint]?
+    var refillPoints:[RefillPoint] = [RefillPoint]()
+    var markers:[GMSMarker] = [GMSMarker]()
     
     
     override func viewDidLoad() {
@@ -60,6 +61,8 @@ class InitialViewController: UIViewController,GMSMapViewDelegate,CLLocationManag
         mapView.isMyLocationEnabled = true
         mapView.settings.myLocationButton = true
         mapView.delegate = self
+        
+        
         locationManager.delegate = self
         locationManager.startUpdatingLocation()
     }
@@ -82,9 +85,14 @@ class InitialViewController: UIViewController,GMSMapViewDelegate,CLLocationManag
         dropDownMenu.show()
     }
     
+    func mapViewSnapshotReady(_ mapView: GMSMapView) {
+        mapView.settings.scrollGestures = true
+        mapView.settings.zoomGestures = true
+    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last{
-            let camera = GMSCameraPosition.camera(withLatitude: (location.coordinate.latitude), longitude:(location.coordinate.longitude), zoom:14)
+            let camera = GMSCameraPosition.camera(withLatitude: (location.coordinate.latitude), longitude:(location.coordinate.longitude), zoom:15)
             mapView.animate(to: camera)
             locationManager.stopUpdatingLocation()
             getAllRefillPoints(range: defaultRange)
@@ -105,14 +113,14 @@ class InitialViewController: UIViewController,GMSMapViewDelegate,CLLocationManag
         params[Constants.KEY_OFFSET] = "0"
         GetRefillPoints(params).loadRefillPoints { (points) in
             self.refillPoints = points
+            self.loadMapOverlays()
             self.tableView.reloadData()
             self.updateUI()
         }
     }
     
     func updateUI(){
-    
-        if refillPoints?.count == 0{
+        if refillPoints.count == 0{
             noRefillPointsView.isHidden = false
             showRefillPointsView.isHidden = true
         }
@@ -121,21 +129,8 @@ class InitialViewController: UIViewController,GMSMapViewDelegate,CLLocationManag
             showRefillPointsView.isHidden = false
         }
     }
-    
-//    @objc func showRefillPoints(_ sender: UITapGestureRecognizer? = nil) {
-//
-//        if mapView.isHidden{
-//            mapView.isHidden = false
-//            tableView.isHidden = true
-//        }
-//        else{
-//            mapView.isHidden = true
-//            tableView.isHidden = false
-//        }
-//    }
-    
+        
     @objc func showRefillPoints(_ sender: UITapGestureRecognizer? = nil) {
-    
         if mapView.isHidden{
             let oldPoint = tableView.frame.origin
             UIView.animate(withDuration: 0.6, animations: {
@@ -146,7 +141,6 @@ class InitialViewController: UIViewController,GMSMapViewDelegate,CLLocationManag
               self.tableView.isHidden = true
             }
         }
-        
         else{
             let oldPoint = tableView.frame.origin
             tableView.frame.origin.y = tableView.frame.origin.y + tableView.frame.size.height
@@ -160,6 +154,24 @@ class InitialViewController: UIViewController,GMSMapViewDelegate,CLLocationManag
         
     }
     
+    func loadMapOverlays(){
+        
+        mapView.clear()
+        if refillPoints.count > 0{
+            var bounds = GMSCoordinateBounds()
+            for refillPoint in refillPoints{
+                guard let latitude = Double(refillPoint.latitude) else { continue }
+                guard let longitude = Double(refillPoint.longitude) else { continue }
+                let position = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+                let marker = GMSMarker(position: position)
+                marker.title = refillPoint.place_name
+                marker.map = mapView
+                bounds = bounds.includingCoordinate(marker.position)
+                markers.append(marker)
+            }
+            mapView.animate(with: GMSCameraUpdate.fit(bounds, with: UIEdgeInsets(top: 50.0 , left: 50.0 ,bottom: 50.0 ,right: 50.0)))
+        }
+    }
     
     
 }
@@ -169,11 +181,11 @@ extension InitialViewController:UITableViewDataSource{
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.refillPoints?.count ?? 0
+        return self.refillPoints.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let refillPoint = refillPoints![indexPath.row]
+        let refillPoint = refillPoints[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! RefillPointCell
         cell.setData(refillPoint: refillPoint)
         return cell
