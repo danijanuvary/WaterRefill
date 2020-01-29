@@ -12,17 +12,21 @@ class SplashViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        perform(#selector(SplashViewController.showInitialView), with: nil, afterDelay: 2)
+       // perform(#selector(SplashViewController.showInitialView), with: nil, afterDelay: 1)
+        perform(#selector(SplashViewController.showInitialView), with: nil, afterDelay: 0)
     }
     
     @objc func showInitialView(){
         let transition = CATransition()
-        transition.duration = 0.5
+       // transition.duration = 0.6
+        transition.duration = 0.0
         transition.type = CATransitionType.push
         transition.subtype = CATransitionSubtype.fromRight
         transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
         view.window!.layer.add(transition, forKey: kCATransition)
-        performSegue(withIdentifier: "showInitialScreen", sender: self)
+        
+        let appDelegate = AppDelegate.sharedInstance()
+        appDelegate.window?.rootViewController = appDelegate.getMainController()
     }
     
 

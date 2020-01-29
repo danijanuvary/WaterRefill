@@ -16,11 +16,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-       
         GMSServices.provideAPIKey(GOOGLE_MAP_SERVICES_API_KEY)
         //GMSPlacesClient.provideAPIKey(GOOGLE_MAP_SERVICES_API_KEY)
         return true
     }
-
+    
+    func getMainController() -> UIViewController{
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let initialViewController = storyboard.instantiateViewController(withIdentifier: "mainNavigation")
+        return initialViewController
+    }
+    
+    class func sharedInstance() -> AppDelegate{
+        return UIApplication.shared.delegate as! AppDelegate
+    }
+    
 }
 

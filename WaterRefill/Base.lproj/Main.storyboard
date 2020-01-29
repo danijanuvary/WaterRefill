@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0LD-sK-sbQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cWM-ep-5RQ">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -11,12 +11,12 @@
         <!--Splash View Controller-->
         <scene sceneID="kZR-vI-7qr">
             <objects>
-                <viewController id="cWM-ep-5RQ" customClass="SplashViewController" customModule="WaterRefill" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="splashView" id="cWM-ep-5RQ" customClass="SplashViewController" customModule="WaterRefill" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YBB-76-nqw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l7Y-yn-Qq2">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="manutd.png" translatesAutoresizingMaskIntoConstraints="NO" id="l7Y-yn-Qq2">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>
@@ -29,9 +29,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bxg-kN-dFr"/>
                     </view>
-                    <connections>
-                        <segue destination="0LD-sK-sbQ" kind="presentation" identifier="showInitialScreen" id="4af-VD-3pq"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c7M-Wr-tZl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -42,11 +39,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="InitialViewController" customModule="WaterRefill" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9xx-aA-o9C" userLabel="Top View">
-                                <rect key="frame" x="0.0" y="56" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Locate Water Refill Points " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YnC-I4-5XQ">
                                         <rect key="frame" x="10" y="18" width="267" height="24"/>
@@ -81,17 +78,17 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3WN-EH-sKm" userLabel="Main Stack View">
-                                <rect key="frame" x="0.0" y="116" width="375" height="531"/>
+                                <rect key="frame" x="0.0" y="104" width="375" height="563"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d6m-rX-WrG" userLabel="Map&amp;TableView">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="461"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="493"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vfD-XF-iVc" customClass="GMSMapView">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="461"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="493"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             </view>
                                             <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iEP-ff-wJm">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="461"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="493"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <connections>
                                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="FSU-Xe-hyb"/>
@@ -112,7 +109,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pr9-Un-bSH" userLabel="No Refill View">
-                                        <rect key="frame" x="0.0" y="461" width="375" height="30"/>
+                                        <rect key="frame" x="0.0" y="493" width="375" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Water Refill Points Available with in 10km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0b-P8-uQB">
                                                 <rect key="frame" x="28" y="5.5" width="319" height="19.5"/>
@@ -129,7 +126,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xVE-ec-lHA" userLabel="Show Refill View">
-                                        <rect key="frame" x="0.0" y="491" width="375" height="40"/>
+                                        <rect key="frame" x="0.0" y="523" width="375" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Water Refill Points Near You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GEz-eu-DsA">
                                                 <rect key="frame" x="20" y="8" width="335" height="24"/>
@@ -175,15 +172,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1077.5999999999999" y="98.50074962518741"/>
+            <point key="canvasLocation" x="980" y="-293"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SJF-wL-u17">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0LD-sK-sbQ" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="mainNavigation" automaticallyAdjustsScrollViewInsets="NO" id="0LD-sK-sbQ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ORg-kz-mMB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -193,7 +190,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="66f-2q-Ldv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138.40000000000001" y="98.50074962518741"/>
+            <point key="canvasLocation" x="129" y="-292"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="manutd.png" width="223" height="226"/>
+    </resources>
 </document>
