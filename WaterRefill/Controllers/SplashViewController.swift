@@ -29,5 +29,8 @@ class SplashViewController: UIViewController {
         appDelegate.window?.rootViewController = appDelegate.getMainController()
     }
     
+    override var prefersStatusBarHidden: Bool {
+      return true
+    }
 
 }
