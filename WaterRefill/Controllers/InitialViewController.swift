@@ -150,6 +150,8 @@ class InitialViewController: UIViewController,GMSMapViewDelegate,CLLocationManag
             }) { (completion) in
               self.tableView.frame.origin = oldPoint
               self.tableView.isHidden = true
+              let topIndex = IndexPath(row: 0, section: 0)
+              self.tableView.scrollToRow(at: topIndex, at: .top, animated: false)
             }
         }
         else{
