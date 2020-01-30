@@ -12,6 +12,9 @@ import SDWebImage
 class RefillPointCell: UITableViewCell {
 
     
+    @IBOutlet weak var mainBackground: UIView!
+    @IBOutlet weak var shadowLayer: UIView!
+    
     @IBOutlet weak var refillImage: UIImageView!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var subtitle: UILabel!
@@ -30,6 +33,15 @@ class RefillPointCell: UITableViewCell {
     
     func setData(refillPoint:RefillPoint){
         
+        mainBackground.layer.cornerRadius = 3
+        mainBackground.layer.masksToBounds = true
+        shadowLayer.layer.masksToBounds = false
+        shadowLayer.layer.shadowOffset = CGSize(width: 0, height: 0)
+        shadowLayer.layer.shadowColor = UIColor.black.cgColor
+        shadowLayer.layer.shadowOpacity = 0.3
+        shadowLayer.layer.cornerRadius = 3
+        shadowLayer.layer.shadowRadius = 3
+        
         refillImage.sd_imageTransition = .fade
         
         var thumbnailPath = refillPoint.thumbnail
@@ -41,6 +53,6 @@ class RefillPointCell: UITableViewCell {
         let url = NSURL(string:urlString)
         refillImage.sd_setImage(with: url as URL?, placeholderImage: UIImage(named: "drop.png"))
         title.text = refillPoint.place_name
-        subtitle.text = refillPoint.address_2 + " " + refillPoint.address_2
+        subtitle.text = refillPoint.address_1 + " " + refillPoint.address_2
     }
 }

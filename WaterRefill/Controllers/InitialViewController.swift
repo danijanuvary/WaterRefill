@@ -44,6 +44,8 @@ class InitialViewController: UIViewController,GMSMapViewDelegate,CLLocationManag
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.showRefillPoints(_:)))
         showRefillPointsView.addGestureRecognizer(tap)
         tableView.register(UINib.init(nibName: REFILL_POINT_CELL_NIB, bundle: nil), forCellReuseIdentifier: identifier)
+        tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
         initialLoad = true
     }
     
@@ -211,7 +213,7 @@ extension InitialViewController:UITableViewDataSource{
 
 extension InitialViewController:DrawerSelectionDelegate{
     func itemSelected(row: Int) {
-        NSLog("item selected = \(row)")
+        
     }
 }
 
