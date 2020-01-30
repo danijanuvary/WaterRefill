@@ -8,6 +8,32 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Drawer Controller-->
+        <scene sceneID="72h-xM-t73">
+            <objects>
+                <viewController storyboardIdentifier="drawerController" id="LDo-xn-gCM" customClass="DrawerController" customModule="WaterRefill" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aRQ-s4-VLk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="fi6-a5-4Mk"/>
+                    </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="drawerWidth">
+                            <real key="value" value="280"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="drawerSegueIdentifier" value="drawer"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="mainSegueIdentifier" value="main"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="0LD-sK-sbQ" kind="custom" identifier="main" customClass="KYEmbedMainControllerSegue" customModule="KYDrawerController" id="aFd-dm-KWQ"/>
+                        <segue destination="jna-BN-iWx" kind="custom" identifier="drawer" customClass="KYEmbedDrawerControllerSegue" customModule="KYDrawerController" id="bhL-o3-562"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bnR-7U-Wat" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2163" y="-363"/>
+        </scene>
         <!--Splash View Controller-->
         <scene sceneID="kZR-vI-7qr">
             <objects>
@@ -32,7 +58,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c7M-Wr-tZl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-719" y="84"/>
+            <point key="canvasLocation" x="-2073" y="584"/>
         </scene>
         <!--Initial View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -159,6 +185,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="VC2-lc-r15">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="xLs-Qj-GjX">
+                            <connections>
+                                <action selector="actionTapped:" destination="BYZ-38-t0r" id="SXX-Ym-thv"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="LOG IN" id="2bX-1Z-Q9w"/>
                     </navigationItem>
                     <connections>
@@ -172,12 +203,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="980" y="-293"/>
+            <point key="canvasLocation" x="326" y="-365"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SJF-wL-u17">
             <objects>
-                <navigationController storyboardIdentifier="mainNavigation" automaticallyAdjustsScrollViewInsets="NO" id="0LD-sK-sbQ" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0LD-sK-sbQ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ORg-kz-mMB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -190,10 +221,95 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="66f-2q-Ldv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="129" y="-292"/>
+            <point key="canvasLocation" x="-910" y="-364"/>
+        </scene>
+        <!--Drawer View Controller-->
+        <scene sceneID="Y2K-3D-PfZ">
+            <objects>
+                <viewController id="jna-BN-iWx" customClass="DrawerViewController" customModule="WaterRefill" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mzJ-MR-M7d">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MnQ-Jn-qbt">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drawer.png" translatesAutoresizingMaskIntoConstraints="NO" id="nlc-0C-miv">
+                                        <rect key="frame" x="10" y="10" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="UT7-aZ-aLX"/>
+                                            <constraint firstAttribute="height" constant="100" id="mpT-js-6BD"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Water Refill Points" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aig-20-oZq">
+                                        <rect key="frame" x="120" y="47" width="235" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="nlc-0C-miv" firstAttribute="leading" secondItem="MnQ-Jn-qbt" secondAttribute="leading" constant="10" id="VPr-Cd-H7M"/>
+                                    <constraint firstItem="aig-20-oZq" firstAttribute="leading" secondItem="nlc-0C-miv" secondAttribute="trailing" constant="10" id="ccI-z8-E18"/>
+                                    <constraint firstAttribute="height" constant="120" id="dcg-4a-WEU"/>
+                                    <constraint firstAttribute="trailing" secondItem="aig-20-oZq" secondAttribute="trailing" constant="20" id="pEB-X5-Y2c"/>
+                                    <constraint firstItem="aig-20-oZq" firstAttribute="centerY" secondItem="MnQ-Jn-qbt" secondAttribute="centerY" id="tW9-Ff-AIn"/>
+                                    <constraint firstItem="nlc-0C-miv" firstAttribute="centerY" secondItem="MnQ-Jn-qbt" secondAttribute="centerY" id="vF5-IW-UtB"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="m32-hA-SWF">
+                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="cdK-Ow-5GX" style="IBUITableViewCellStyleDefault" id="iny-Q1-YvA">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iny-Q1-YvA" id="lY7-Eb-AVI">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cdK-Ow-5GX">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="jna-BN-iWx" id="TpT-Fy-dH5"/>
+                                    <outlet property="delegate" destination="jna-BN-iWx" id="lOH-fG-PbQ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="oMb-QN-KQF" firstAttribute="trailing" secondItem="m32-hA-SWF" secondAttribute="trailing" id="LLt-Ol-SHS"/>
+                            <constraint firstItem="m32-hA-SWF" firstAttribute="leading" secondItem="oMb-QN-KQF" secondAttribute="leading" id="Ss9-RL-6nk"/>
+                            <constraint firstItem="MnQ-Jn-qbt" firstAttribute="top" secondItem="oMb-QN-KQF" secondAttribute="top" id="TIR-bg-uXt"/>
+                            <constraint firstItem="m32-hA-SWF" firstAttribute="top" secondItem="MnQ-Jn-qbt" secondAttribute="bottom" id="bUG-l4-Yfr"/>
+                            <constraint firstItem="MnQ-Jn-qbt" firstAttribute="leading" secondItem="oMb-QN-KQF" secondAttribute="leading" id="cYO-A9-LCZ"/>
+                            <constraint firstItem="oMb-QN-KQF" firstAttribute="bottom" secondItem="m32-hA-SWF" secondAttribute="bottom" id="oZF-PL-9KW"/>
+                            <constraint firstItem="oMb-QN-KQF" firstAttribute="trailing" secondItem="MnQ-Jn-qbt" secondAttribute="trailing" id="ooP-eQ-YO4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oMb-QN-KQF"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="m32-hA-SWF" id="jov-PG-yeD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n5S-ug-KCv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1414" y="-1137"/>
         </scene>
     </scenes>
     <resources>
+        <image name="drawer.png" width="144" height="144"/>
         <image name="manutd.png" width="223" height="226"/>
+        <image name="menu" width="22" height="22"/>
     </resources>
 </document>

@@ -16,6 +16,9 @@
 		5D58D95423D9DC41005EE578 /* RefillPointCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D58D95223D9DC41005EE578 /* RefillPointCell.xib */; };
 		5D58D95623D9E700005EE578 /* drop.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D58D95523D9E700005EE578 /* drop.png */; };
 		5DAF1C3123E1BB3D004FB207 /* manutd.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DAF1C3023E1BB3D004FB207 /* manutd.png */; };
+		5DAF1C3323E1C32A004FB207 /* DrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DAF1C3223E1C32A004FB207 /* DrawerController.swift */; };
+		5DAF1C3523E1C340004FB207 /* DrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DAF1C3423E1C340004FB207 /* DrawerViewController.swift */; };
+		5DAF1C3723E2B1A0004FB207 /* drawer.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DAF1C3623E2B1A0004FB207 /* drawer.png */; };
 		5DFAA3AA23D5DF25003E5C7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFAA3A923D5DF25003E5C7D /* AppDelegate.swift */; };
 		5DFAA3B123D5DF25003E5C7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DFAA3AF23D5DF25003E5C7D /* Main.storyboard */; };
 		5DFAA3B323D5DF27003E5C7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DFAA3B223D5DF27003E5C7D /* Assets.xcassets */; };
@@ -38,6 +41,9 @@
 		5D58D95223D9DC41005EE578 /* RefillPointCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RefillPointCell.xib; sourceTree = "<group>"; };
 		5D58D95523D9E700005EE578 /* drop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drop.png; sourceTree = "<group>"; };
 		5DAF1C3023E1BB3D004FB207 /* manutd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = manutd.png; sourceTree = "<group>"; };
+		5DAF1C3223E1C32A004FB207 /* DrawerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerController.swift; sourceTree = "<group>"; };
+		5DAF1C3423E1C340004FB207 /* DrawerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerViewController.swift; sourceTree = "<group>"; };
+		5DAF1C3623E2B1A0004FB207 /* drawer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drawer.png; sourceTree = "<group>"; };
 		5DFAA3A623D5DF25003E5C7D /* WaterRefill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterRefill.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DFAA3A923D5DF25003E5C7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DFAA3B023D5DF25003E5C7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -69,6 +75,8 @@
 			children = (
 				5D58D91D23D73716005EE578 /* SplashViewController.swift */,
 				5D58D91F23D73964005EE578 /* InitialViewController.swift */,
+				5DAF1C3223E1C32A004FB207 /* DrawerController.swift */,
+				5DAF1C3423E1C340004FB207 /* DrawerViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -86,6 +94,7 @@
 			children = (
 				5D58D91723D736AA005EE578 /* splash.png */,
 				5D58D92123D73FB9005EE578 /* logotext.png */,
+				5DAF1C3623E2B1A0004FB207 /* drawer.png */,
 				5DAF1C3023E1BB3D004FB207 /* manutd.png */,
 				5D58D95523D9E700005EE578 /* drop.png */,
 			);
@@ -258,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D58D91823D736AA005EE578 /* splash.png in Resources */,
+				5DAF1C3723E2B1A0004FB207 /* drawer.png in Resources */,
 				5DFAA3B623D5DF27003E5C7D /* LaunchScreen.storyboard in Resources */,
 				5D58D95423D9DC41005EE578 /* RefillPointCell.xib in Resources */,
 				5D58D95623D9E700005EE578 /* drop.png in Resources */,
@@ -304,6 +314,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-WaterRefill/Pods-WaterRefill-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
+				"${BUILT_PRODUCTS_DIR}/KYDrawerController/KYDrawerController.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
@@ -313,6 +324,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KYDrawerController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -355,7 +367,9 @@
 				5D58D91E23D73716005EE578 /* SplashViewController.swift in Sources */,
 				5DFAA3C223D5E2C8003E5C7D /* NetworkRequest.swift in Sources */,
 				5DFAA3C623D62E5D003E5C7D /* RefillPoint.swift in Sources */,
+				5DAF1C3523E1C340004FB207 /* DrawerViewController.swift in Sources */,
 				5DFAA3AA23D5DF25003E5C7D /* AppDelegate.swift in Sources */,
+				5DAF1C3323E1C32A004FB207 /* DrawerController.swift in Sources */,
 				5DFAA3C423D62E48003E5C7D /* GetRefillPoints.swift in Sources */,
 				5D58D92023D73964005EE578 /* InitialViewController.swift in Sources */,
 				5D58D92723D794FC005EE578 /* Constants.swift in Sources */,

@@ -9,6 +9,7 @@
 import UIKit
 import GoogleMaps
 import DropDown
+import KYDrawerController
 
 class InitialViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDelegate{
 
@@ -61,8 +62,6 @@ class InitialViewController: UIViewController,GMSMapViewDelegate,CLLocationManag
         mapView.isMyLocationEnabled = true
         mapView.settings.myLocationButton = true
         mapView.delegate = self
-        
-        
         locationManager.delegate = self
         locationManager.startUpdatingLocation()
     }
@@ -133,6 +132,12 @@ class InitialViewController: UIViewController,GMSMapViewDelegate,CLLocationManag
         }
     }
         
+    @IBAction func actionTapped(_ sender: Any) {
+        if let drawerController = self.navigationController?.parent as? KYDrawerController{
+            drawerController.setDrawerState(.opened, animated: true)
+        }
+    }
+    
     @objc func showRefillPoints(_ sender: UITapGestureRecognizer? = nil) {
         
         if mapView.isHidden{
@@ -187,6 +192,7 @@ class InitialViewController: UIViewController,GMSMapViewDelegate,CLLocationManag
 }
 
 extension InitialViewController:UITableViewDataSource{
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -203,6 +209,13 @@ extension InitialViewController:UITableViewDataSource{
     
 }
 
+extension InitialViewController:DrawerSelectionDelegate{
+    func itemSelected(row: Int) {
+        NSLog("item selected = \(row)")
+    }
+}
+
 extension InitialViewController:UITableViewDelegate{
     
 }
+

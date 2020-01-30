@@ -26,7 +26,7 @@ class SplashViewController: UIViewController {
         view.window!.layer.add(transition, forKey: kCATransition)
         
         let appDelegate = AppDelegate.sharedInstance()
-        appDelegate.window?.rootViewController = appDelegate.getMainController()
+        appDelegate.window?.rootViewController = appDelegate.getRootController()
     }
     
     override var prefersStatusBarHidden: Bool {

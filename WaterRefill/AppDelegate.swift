@@ -21,9 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func getMainController() -> UIViewController{
+    func getRootController() -> UIViewController{
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let initialViewController = storyboard.instantiateViewController(withIdentifier: "mainNavigation")
+        let initialViewController = storyboard.instantiateViewController(withIdentifier: "drawerController")
         return initialViewController
     }
     
