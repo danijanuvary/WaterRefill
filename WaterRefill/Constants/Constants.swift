@@ -22,4 +22,5 @@ class Constants: NSObject {
    static let KEY_LONGITUDE = "currentlongitude"
    static let KEY_ORDER_BY = "order_by"
    static let KEY_ORDER_BY_TEMP = "order_by" 
+   static let KEY_ORDER_BY_TEMP_ONE = "order_by" 
 }
